@@ -6,12 +6,18 @@ import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
+  const template = children.hasOwnProperty('props') && children.props.hasOwnProperty('templateKey') ? children.props.templateKey : '';
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en" className={template} />
         <title>{title}</title>
         <meta name="description" content={description} />
 
@@ -48,7 +54,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <Navbar /> 
       <div>{children}</div>
       <Footer />
     </div>

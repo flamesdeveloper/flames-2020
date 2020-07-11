@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
+import facebook from '../img/social/facebook.svg'
+import sportstg from '../img/social/sportstg.svg'
 import logo from '../img/logo.svg'
 
 const Navbar = class extends React.Component {
@@ -10,6 +11,16 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: '',
     }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      let navSolid = 'solid';
+      if (window.scrollY < 32) {        
+        navSolid = ''        
+      }
+      this.setState({ navSolid });
+    })
   }
 
   toggleHamburger = () => {
@@ -35,14 +46,18 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className={`navbar is-transparent ${this.state.navSolid}`}
         role="navigation"
         aria-label="main-navigation"
+        style={{
+          position: 'fixed',
+          width: '100%'
+        }}
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+            <Link to="/#" className="navbar-item" title="Logo">
+              <img src={logo} alt="St. Jude's Flames" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -60,31 +75,41 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/#about">
                 About
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
+              <Link className="navbar-item" to="/#links">
+                Links
+              </Link>
+              <Link className="navbar-item" to="/#values">
+                Values
+              </Link>
+              <Link className="navbar-item" to="/#contact">
+                Contact
               </Link>
               <Link className="navbar-item" to="/blog">
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
             </div>
             <div className="navbar-end has-text-centered">
-              <a
+            <a
                 className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="https://websites.sportstg.com/club_info.cgi?c=1-6-130743-0-0&a=TEAMS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="icon">
-                  <img src={github} alt="Github" />
+                  <img src={sportstg} alt="SportsTG" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="https://www.facebook.com/groups/653134331406771"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon">
+                  <img src={facebook} alt="Facebook" />
                 </span>
               </a>
             </div>

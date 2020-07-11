@@ -1,109 +1,47 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+import Links from '../components/FeatureLinks'
 import BlogRoll from '../components/BlogRoll'
+import ContactsGrid from '../components/Contacts'
 
 export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
+  templateKey,
   mainpitch,
-  description,
-  intro,
+  mainlinks,
+  values,
+  posts,
+  contacts,
 }) => (
   <div>
     <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
+      className="full-width-image margin-top-0 hero"
     >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
+      &nbsp;
     </div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
+          <div className="columns is-centered">
+            <div className="column is-10">
               <div className="content">
                 <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
+                    <h3 className="has-text-weight-semibold is-size-2 has-text-centered anchor" id="about">{mainpitch.title}</h3>
+                    <div className="tile">
+                      <p className="subtitle bottom-section">{mainpitch.description}</p>
+                    </div>
                 </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
+                <Links links={mainlinks} />
+                <Features values={values} />
+                <ContactsGrid contacts={contacts} />
+                <div className="column is-12 top-section">
+                  <h3 className="has-text-weight-semibold is-size-2 has-text-centered anchor" id="posts">
+                    {posts.title}
                   </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
+                  <BlogRoll />                  
                 </div>
               </div>
             </div>
@@ -115,14 +53,25 @@ export const IndexPageTemplate = ({
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
+  templateKey: PropTypes.string,
+  mainpitch: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string
+  }),
+  mainlinks: PropTypes.shape({
+    title: PropTypes.string,
+    links: PropTypes.array,
+  }),
+  values: PropTypes.shape({
+    title: PropTypes.string,
     blurbs: PropTypes.array,
+  }),
+  posts: PropTypes.shape({
+    title: PropTypes.string
+  }),
+  contacts: PropTypes.shape({
+    title: PropTypes.string,
+    list: PropTypes.array,
   }),
 }
 
@@ -132,13 +81,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        templateKey={frontmatter.templateKey}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        mainlinks={frontmatter.mainlinks}
+        values={frontmatter.values}
+        posts={frontmatter.posts}
+        contacts={frontmatter.contacts}
       />
     </Layout>
   )
@@ -158,34 +106,36 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        subheading
+        templateKey
         mainpitch {
           title
           description
         }
-        description
-        intro {
+        mainlinks {
+          title
+          links {
+            title
+            url
+          }
+        }
+        values {
+          title
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            title
             text
           }
-          heading
-          description
+        }
+        posts {
+          title
+        }
+        contacts {
+          title
+          list {
+            position
+            name
+            phone
+            email
+          }
         }
       }
     }
