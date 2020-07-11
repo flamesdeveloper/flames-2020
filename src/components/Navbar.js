@@ -13,32 +13,45 @@ const Navbar = class extends React.Component {
     }
   }
 
+  toggleNavbar = () => {
+    let navSolid = 'solid';
+    if (window.scrollY < 32 && !this.state.active ) {        
+      navSolid = ''        
+    }
+    this.setState({ navSolid });
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      let navSolid = 'solid';
-      if (window.scrollY < 32) {        
-        navSolid = ''        
-      }
-      this.setState({ navSolid });
+      this.toggleNavbar();
     })
   }
 
   toggleHamburger = () => {
-    // toggle the active boolean in the state
+
+
+    // toggle the active boolean in the state    
     this.setState(
       {
         active: !this.state.active,
       },
       // after state has been updated,
       () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
+        if (!this.state.active) {
+          // hiding
+          this.toggleNavbar();
+          setTimeout(() => {
+            this.setState({
               navBarActiveClass: '',
-            })
+            });
+          }, 200)
+        } else {
+          // appearing
+          this.setState({
+            navBarActiveClass: 'is-active',
+          });
+          setTimeout(this.toggleNavbar, 0);
+        }
       }
     )
   }
