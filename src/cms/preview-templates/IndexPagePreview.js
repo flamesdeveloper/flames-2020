@@ -8,6 +8,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
+        templateKey='index-page'
         mainpitch={data.mainpitch || {}}
         mainlinks={data.mainlinks || { links: [] }}
         values={data.values || { blurbs: [] }}
