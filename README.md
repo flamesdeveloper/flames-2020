@@ -1,3 +1,39 @@
+# St Jude's Flames 2020 Website
+
+## So you've been drafted to work on this
+
+Congratulations! Working with nonprofit community clubs is a rewarding way to give back to your community. This site is built on the JAMstack architecture using Gatsby and Netlify CMS to provide a cheap, reasonably simple, and fast web presence that is hopefully also easy to maintain. Hopefully you're familiar with at least Gatsby, but if not then having a grip on Reactjs and GraphQL will generally do the trick.
+
+### Workflow
+
+When I'm editing this site, here's what my workflow looks like:
+
+* Install nodejs (tested with V12) and yarn
+* Clone the repository if not already done
+* `yarn install` - install dependencies
+* `yarn develop` - build a development version and run a live server at http://localhost:8000/ that refreshes your changes automatically as you save.
+* Deploy by pushing your changes to the master branch. If working on something crazy, take a branch and work there then merge to master when you're ready to go
+
+I'm by no means an expert at this, but these are the steps that worked well for me. I had some issues with gatsby-cli that I didn't have with yarn.
+
+### Accounts
+
+The club secretary should have a copy of all account credentials. If they don't, you can reach me at [smidgedy@gmail.com](mailto:smidgedy@gmail.com). I've made an effort to keep the credentials for this project separate from my own personal accounts. The short story is that accounts have been registered to flamesdeveloper@gmail.com so if you can get this one you
+should be able to do resets from there. 
+
+* Github
+  - username: flamesdeveloper
+  - email: flamesdeveloper@gmail.com
+
+* Gmail
+  - email: flamesdeveloper@gmail.com
+
+* Netlify
+  - email: flamesdeveloper@gmail.com
+
+
+The original README for the Gatsby / Netlify CMS starter is left below.
+
 # Gatsby + Netlify CMS Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
