@@ -13,6 +13,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  attachments
 }) => {
   const PostContent = contentComponent || Content
 
@@ -52,6 +53,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  attachments: PropTypes.object
 }
 
 const BlogPost = ({ data }) => {
@@ -74,6 +76,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        attachments={post.frontmatter.attachments}
       />
     </Layout>
   )
@@ -96,7 +99,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
+        tags.
+        attachments {
+          title
+          file
+        }
       }
     }
   }
