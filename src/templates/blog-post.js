@@ -14,7 +14,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-//  attachments
+  attachments
 }) => {
   const PostContent = contentComponent || Content
 
@@ -29,6 +29,18 @@ export const BlogPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
+            {attachments && attachments.length ? (
+              <div style={{ marginTop: `4rem` }}>
+                <h4>Attachments</h4>
+                <ul className="taglist">
+                  {attachments.map((attachment) => (
+                    <li key={attachment}>
+                      <Link to={attachment.file}>{attachment.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -54,10 +66,10 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-/*  attachments: PropTypes.arrayOf( PropTypes.shape({
+  attachments: PropTypes.arrayOf( PropTypes.shape({
     title: PropTypes.string,
     file: PropTypes.string
-  }))*/
+  }))
 }
 
 const BlogPost = ({ data }) => {
@@ -80,7 +92,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        //attachments={post.frontmatter.attachments}
+        attachments={post.frontmatter.attachments}
       />
     </Layout>
   )
@@ -104,6 +116,10 @@ export const pageQuery = graphql`
         title
         description
         tags
+        attachments {
+          title
+          file
+        }
       }
     }
   }
