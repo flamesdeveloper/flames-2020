@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import loadable from '@loadable/component'
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Links from '../components/FeatureLinks'
-import BlogRoll from '../components/BlogRoll'
-import ContactsGrid from '../components/Contacts'
+const Layout = loadable(() => import('../components/Layout'))
+const Features = loadable(() => import('../components/Features'))
+const Links = loadable(() => import('../components/FeatureLinks'))
+const BlogRoll = loadable(() => import('../components/BlogRoll'))
+const ContactsGrid = loadable(() => import('../components/Contacts'))
 
 export const IndexPageTemplate = ({
   templateKey,

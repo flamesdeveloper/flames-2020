@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import facebook from '../img/social/facebook.svg'
-import sportstg from '../img/social/sportstg.svg'
-import logo from '../img/logo.svg'
+import loadable from '@loadable/component'
+/*const facebook = loadable(() => import('../img/social/facebook.svg'))
+const facebook = loadable(() => import('../img/social/facebook.svg'))*/
+const logo = loadable(() => import('../img/logo.svg'))
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -104,7 +105,18 @@ const Navbar = class extends React.Component {
                 Blog
               </Link>
             </div>
-            <div className="navbar-end has-text-centered">
+          </div>
+        </div>
+      </nav>
+    )
+  }
+}
+
+export default Navbar
+
+
+/*
+<div className="navbar-end has-text-centered">
             <a
                 className="navbar-item"
                 href="https://websites.sportstg.com/club_info.cgi?c=1-6-130743-0-0&a=TEAMS"
@@ -126,11 +138,4 @@ const Navbar = class extends React.Component {
                 </span>
               </a>
             </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
-}
-
-export default Navbar
+*/

@@ -1,9 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import loadable from '@loadable/component'
+const Footer = loadable(() => import('../components/Footer'))
+const Navbar = loadable(() => import('../components/Navbar'))
+loadable(() => import('./all.sass'))
+// import './all.sass'
+const useSiteMetadata = loadable(() => import('./SiteMetadata'))
 import { withPrefix } from 'gatsby'
 
 if (typeof window !== "undefined") {
