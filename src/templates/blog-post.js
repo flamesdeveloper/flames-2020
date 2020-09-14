@@ -35,7 +35,7 @@ export const BlogPostTemplate = ({
                 <ul className="taglist">
                   {attachments.map((attachment) => (
                     <li key={attachment}>
-                      <Link to={attachment.file}>{attachment.title}</Link>
+                      <Link to={attachment.file.publicURL}>{attachment.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -118,7 +118,9 @@ export const pageQuery = graphql`
         tags
         attachments {
           title
-          file
+          file {
+            publicURL
+          }
         }
       }
     }
