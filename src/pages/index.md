@@ -2,10 +2,10 @@
 templateKey: index-page
 mainpitch:
   title: About Us
-  description: >
-    This is a quick sentence or paragraph that should talk about who you
-    are  and what your values are. It should clearly state your mission and give
-    the reader a clear message about your purpose.
+  description: St Jude's Flames is a junior basketball club participating in the
+    Frankston & District Basketball Association. We are affilitated with St
+    Jude's Primary School in Langwarrin, and we're all about getting kids in our
+    community onto the courts for fun, friendship, and fitness.
 mainlinks:
   title: Important Info
   links:
