@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Markdown from 'markdown-to-jsx'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
@@ -31,7 +32,7 @@ export const IndexPageTemplate = ({
                 <div className="content">
                     <h3 className="has-text-weight-semibold is-size-2 has-text-centered anchor" id="about">{mainpitch.title}</h3>
                     <div className="tile">
-                      <p className="subtitle bottom-section">{mainpitch.description}</p>
+                      <p className="subtitle bottom-section"><Markdown>{mainpitch.description}</Markdown></p>
                     </div>
                 </div>
                 <Links links={mainlinks} />
