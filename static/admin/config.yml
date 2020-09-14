@@ -36,7 +36,7 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
           - {label: Mainlinks, name: mainlinks, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Links, name: links, widget: list, fields: [{label: Title, name: title, widget: string}, {label: URL, name: url, widget: string}]}, {label: Dates, name: dates, widget: list, fields: [{label: Title, name: title, widget: string}, {label: date, name: date, widget: date}]}]}
           - {label: Values, name: values, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Text, name: text, widget: text}]}]}
           - {label: Posts, name: posts, widget: object, fields: [{label: Title, name: title, widget: string}]}
