@@ -1,11 +1,11 @@
 ---
 templateKey: blog-post
+featuredimage: /img/apple-touch-icon.png
 title: 2020 Club Documents
 date: 2020-09-14T13:25:56.446Z
 description: At the bottom of this post you'll find a copy of our most recent
   Club Rules and Code of Conduct.
-featuredpost: false
-featuredimage: /img/apple-touch-icon.png
+featuredpost: true
 tags:
   - rules
 attachments:
