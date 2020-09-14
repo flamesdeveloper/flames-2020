@@ -18,7 +18,7 @@ const LinkGrid = ({ links }) => (
       </section>
     </div>
     <div className="column is-6">
-      <section className="section-horizontal has-text-centered">
+      <section className="section-horizontal">
         {links.dates.map((item) => (
           <div key={item.title}>
             <strong>{new Intl.DateFormat("en-AU").format(new Date(item.date))}</strong> - {item.title}
