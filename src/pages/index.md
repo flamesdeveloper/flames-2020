@@ -10,11 +10,11 @@ mainlinks:
   title: Important Info
   links:
     - title: 2020 Registration
-      url: https://www.google.com
+      url: https://www.playhq.com/basketball-victoria/org/st-judes-flames-basketball-club/d56f28e1/register
     - title: Teams & Fixtures
-      url: https://websites.sportstg.com/club_info.cgi?c=1-6-130743-0-0&a=TEAMS
-    - title: Facebook Page
-      url: https://www.facebook.com/groups/653134331406771
+      url: https://www.playhq.com/basketball-victoria/org/st-judes-flames-basketball-club/d56f28e1
+    - title: How to score
+      url: https://vimeo.com/162483366
   dates:
     - title: An Important Date
       date: 2020-09-22T16:04:10.000Z
