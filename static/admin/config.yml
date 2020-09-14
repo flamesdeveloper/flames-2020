@@ -26,7 +26,7 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Attachments", name: "attachments", widget: "object", fields: [{label: Title, name: title, widget: string}, {label: File, name: file, widget: "file"}]}
+#      - {label: "Attachments", name: "attachments", widget: "object", fields: [{label: Title, name: title, widget: string}, {label: File, name: file, widget: "file"}]}
 
   - name: "pages"
     label: "Pages"
@@ -37,7 +37,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Mainlinks, name: mainlinks, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Links, name: links, widget: list, fields: [{label: Title, name: title, widget: string}, {label: URL, name: url, widget: string}]}]}
+          - {label: Mainlinks, name: mainlinks, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Links, name: links, widget: list, fields: [{label: Title, name: title, widget: string}, {label: URL, name: url, widget: string}]}, {label: Dates, name: dates, widget: list, fields: [{label: Title, name: title, widget: string}, {label: date, name: date, widget: date}]}]}
           - {label: Values, name: values, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Text, name: text, widget: text}]}]}
           - {label: Posts, name: posts, widget: object, fields: [{label: Title, name: title, widget: string}]}
           - {label: Contacts, name: contacts, widget: object, fields: [{label: Title, name: title, widget: string}, {label: List, name: list, widget: list, fields: [{label: Position, name: position, widget: string}, {label: Name, name: name, widget: string}, {label: Phone, name: phone, widget: string}, {label: Email, name: email, widget: string}]}]}

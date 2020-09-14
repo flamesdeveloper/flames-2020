@@ -15,22 +15,21 @@ mainlinks:
       url: https://websites.sportstg.com/club_info.cgi?c=1-6-130743-0-0&a=TEAMS
     - title: Facebook Page
       url: https://www.facebook.com/groups/653134331406771
+  dates:
+    - title: sample
+      date: 2016-12-17T15:04:10.000Z
 values:
   title: Our Values
   blurbs:
-    - title: Team Players
+    - title: Respect
       text: >
-        Some sort of text that describes your values. This is what you're all
-        about so it's good to have this right up front and center.
-    - title: Another Value
+        Respect each other as team players, respect our coaches, managers, scorers, referees, & spectators.
+    - title: Commitment
       text: >
-        If you were expecting another value here then guess what - you nailed
-        it. This is another value that's important to your club.
-    - title: Woah 3 Values
+        Expect each player to be committed to not only each match, but also weekly training sessions. Each player must be committed to playing as a team player rather than an individual.
+    - title: Integrity
       text: >
-        More than 2 values? In this economy? Let's not get carried away here,
-        values work when you pick a short list of the things that are most
-        important to your club.
+        Play each match with honesty and strong moral principles.
 posts:
   title: Latest Posts
 contacts:

@@ -61,6 +61,7 @@ IndexPageTemplate.propTypes = {
   mainlinks: PropTypes.shape({
     title: PropTypes.string,
     links: PropTypes.array,
+    dates: PropTypes.array
   }),
   values: PropTypes.shape({
     title: PropTypes.string,
@@ -116,6 +117,10 @@ export const pageQuery = graphql`
           links {
             title
             url
+          }
+          dates {
+            title
+            date
           }
         }
         values {

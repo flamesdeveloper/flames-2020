@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+//import Attachments from '../components/Attachments'
 
 export const BlogPostTemplate = ({
   content,
@@ -13,7 +14,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  attachments
+//  attachments
 }) => {
   const PostContent = contentComponent || Content
 
@@ -53,7 +54,10 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  attachments: PropTypes.object
+/*  attachments: PropTypes.arrayOf( PropTypes.shape({
+    title: PropTypes.string,
+    file: PropTypes.string
+  }))*/
 }
 
 const BlogPost = ({ data }) => {
@@ -76,7 +80,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        attachments={post.frontmatter.attachments}
+        //attachments={post.frontmatter.attachments}
       />
     </Layout>
   )
@@ -99,11 +103,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags.
-        attachments {
-          title
-          file
-        }
+        tags
       }
     }
   }
