@@ -9,23 +9,26 @@ const LinkGrid = ({ links }) => (
       </h3>
     </div>
     <div className="column is-6">
-      <section className="section-horizontal has-text-centered">
+      <section className="section-horizontal has-text-centered featured-links">
         {links.links.map((item) => (
           <div key={item.title}>
-            <a className="featured"  href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
+            <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
           </div>
         ))}
       </section>
     </div>
+    {links.dates.length > 0 && 
     <div className="column is-6">
-      <section className="section-horizontal">
+      <section className="section-horizontal has-text-centered featured-links">
         {links.dates.map((item) => (
-          <div key={item.title}>
-            <strong>{new Intl.DateTimeFormat("en-AU").format(new Date(item.date))}</strong> - {item.title}
+          <div style={{ lineHeight: '1.1rem' }} key={item.title}>
+            <strong style={{fontSize: '1.0rem'}}>{item.title}</strong><br />
+            {new Intl.DateTimeFormat("en-AU").format(new Date(item.date))}<br /><br />
           </div>
         ))}
       </section>
     </div>
+    }
   </div>
 )
 
