@@ -21,9 +21,9 @@ const LinkGrid = ({ links }) => (
     <div className="column is-6">
       <section className="section-horizontal has-text-centered featured-links">
         {links.dates.map((item) => (
-          <div style={{ lineHeight: '1.1rem' }} key={item.title}>
-            <strong style={{fontSize: '1.0rem'}}>{item.title}</strong><br />
-            {new Intl.DateTimeFormat("en-AU").format(new Date(item.date))}<br /><br />
+          <div style={{ lineHeight: '1.1rem', marginTop: '0.5rem', marginBottom: '0.5rem' }} key={item.title}>
+            <div><strong style={{fontSize: '1.0rem'}}>{item.title}</strong></div>
+            <div>{new Intl.DateTimeFormat("en-AU").format(new Date(item.date))}</div>
           </div>
         ))}
       </section>
