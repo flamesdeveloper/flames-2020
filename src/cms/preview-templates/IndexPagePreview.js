@@ -10,7 +10,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       <IndexPageTemplate
         templateKey='index-page'
         mainpitch={data.mainpitch || {}}
-        mainlinks={data.mainlinks || { links: [] }}
+        mainlinks={data.mainlinks || { links: [], dates: [] }}
         values={data.values || { blurbs: [] }}
         posts={data.posts || {}}
         contacts={data.contacts || {list: []}}        
