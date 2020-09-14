@@ -3,9 +3,11 @@ templateKey: index-page
 mainpitch:
   title: About Us
   description: St Jude's Flames is a junior basketball club participating in the
-    Frankston & District Basketball Association. We are affilitated with St
-    Jude's Primary School in Langwarrin, and we're all about getting kids in our
-    community onto the courts for fun, friendship, and fitness.
+    [Frankston & District Basketball Association](https://www.fdba.com.au). We
+    are affilitated with [St Jude's Primary
+    School](https://www.sjlangwarrin.catholic.edu.au/) in Langwarrin, and we're
+    all about getting kids in our community onto the courts for fun, friendship,
+    and fitness.
 mainlinks:
   title: Important Info
   links:
