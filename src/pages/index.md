@@ -7,7 +7,7 @@ mainpitch:
     are  and what your values are. It should clearly state your mission and give
     the reader a clear message about your purpose.
 mainlinks:
-  title: Important Links
+  title: Important Info
   links:
     - title: 2020 Registration
       url: https://www.google.com
