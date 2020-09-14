@@ -1,10 +1,8 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { Helmet } from 'react-helmet'
-const Footer = loadable(() => import('../components/Footer'))
-const Navbar = loadable(() => import('../components/Navbar'))
-loadable(() => import('./all.sass'))
-// import './all.sass'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 

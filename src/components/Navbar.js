@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import loadable from '@loadable/component'
 /*const facebook = loadable(() => import('../img/social/facebook.svg'))
 const facebook = loadable(() => import('../img/social/facebook.svg'))*/
-const logo = loadable(() => import('../img/logo.svg'))
+
+import logo from '../img/logo.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {

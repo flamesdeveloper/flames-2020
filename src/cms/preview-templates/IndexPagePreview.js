@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import loadable from '@loadable/component'
-const IndexPageTemplate = loadable(() => import('../../templates/index-page'))
+import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
