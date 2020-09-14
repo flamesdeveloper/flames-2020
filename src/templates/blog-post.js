@@ -35,7 +35,7 @@ export const BlogPostTemplate = ({
                 <ul className="taglist">
                   {attachments.map((attachment) => (
                     <li key={attachment}>
-                      <Link to={attachment.file.publicURL}>{attachment.title}</Link>
+                      <a target="_blank" rel="noopener noreferrer" href={attachment.file.publicURL}>{attachment.title}</a>
                     </li>
                   ))}
                 </ul>
