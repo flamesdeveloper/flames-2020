@@ -18,10 +18,10 @@ mainlinks:
     - title: How to score
       url: https://vimeo.com/162483366
   dates:
-    - title: An Important Date
-      date: 2020-09-22T16:04:10.000Z
-    - date: 2020-09-29T09:51:17.449Z
-      title: Another Important Date
+    - date: 2021-03-15T08:50:51.104Z
+      title: Winter 2021 Registrations Open
+    - date: 2021-04-01T08:51:17.449Z
+      title: Winter 2021 Registrations Close
 values:
   title: Our Values
   blurbs:
@@ -43,11 +43,11 @@ contacts:
   title: Club Contacts
   list:
     - position: President
-      name: Justine Bell
-      phone: 0400 000 000
-      email: email@email.com
-    - position: Secretary
-      name: Natasha
-      phone: 0400 000 000
+      name: Rachael Oxley
+      phone: 0410 692 379
+      email: stjudesflames@gmail.com
+    - position: Treasurer
+      name: Andrew Gascard
+      phone: 0407 884 967
       email: stjudesflames@gmail.com
 ---
