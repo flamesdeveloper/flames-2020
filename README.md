@@ -30,6 +30,12 @@ should be able to do resets from there.
 
 * Netlify
   - email: flamesdeveloper@gmail.com
+  
+* Cloudflare
+  - email: flamesdeveloper@gmail.com
+  
+* VentraIP (domain registration)
+  - email: stjudesflames@gmail.com
 
 
 The original README for the Gatsby / Netlify CMS starter is left below.
@@ -62,7 +68,7 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 
 ## Prerequisites
 
-- Node (I recommend using v8.2.0 or higher)
+- Node (>= v8.2.0)
 - [Gatsby CLI](https://www.gatsbyjs.org/docs/)
 - [Netlify CLI](https://github.com/netlify/cli)
 
