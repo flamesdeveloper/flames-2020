@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
 title: New Website
-date: 2020-09-14T13:46:26.799Z
-description: The new website, it is here!
+date: 2021-02-15T08:57:21.093Z
+description: Welcome!
 featuredpost: false
 tags:
   - website
 ---
-There's nothing important in this blog post, other than to say we got a new website.
+Welcome to the new website for the St Judes Flames Basketball Club. We hope this becomes a useful resource for players, parents, coaches, and community members!
